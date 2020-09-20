@@ -1,9 +1,28 @@
+:root {
+  --accent-color1: #fb1;
+  --accent-color2: rgb(72, 85, 201);
+  --body-color: #fff;
+  --white: #fff;
+  --grey: #eee;
+  --heading-color: #111;
+  --text-color: #333;
+}
+
+/* TODO: add dark mode */
+body.dark {
+  --body-color: #111;
+  --heading-color: #fff;
+  --text-color: #eee;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  min-height: 100vh;
 }
 
 a {
