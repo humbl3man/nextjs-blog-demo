@@ -3,8 +3,6 @@ import React, { useContext } from 'react';
 import styled from '@emotion/styled';
 import { ctx } from '../context/context';
 import { siteTitle } from '../config/site';
-import LightIcon from '../public/light.svg';
-import DarkIcon from '../public/dark.svg';
 
 const HeaderWrapper = styled.header`
   height: 90px;
@@ -32,7 +30,7 @@ const ThemeToggle = styled.button`
   background: transparent;
   color: var(--text-color);
   cursor: pointer;
-  svg {
+  img {
     width: 25px;
     height: 25px;
   }
@@ -47,7 +45,7 @@ export default function Header() {
           <Link href="/">{siteTitle}</Link>
         </Heading>
         <ThemeToggle title={theme === 'light' ? 'Activate Dark Theme' : 'Activate Light Theme'} type="button" onClick={toggleTheme}>
-          {theme === 'light' ? <DarkIcon /> : <LightIcon />}
+          {theme === 'light' ? <img src="/dark.svg" alt="Dark" /> : <img src="/light.svg" alt="Light" />}
         </ThemeToggle>
       </Container>
     </HeaderWrapper>
