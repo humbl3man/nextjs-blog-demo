@@ -20,7 +20,7 @@ const BlogPost = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <PostTitle>{post.title}</PostTitle>
       <p>{post.body}</p>
 
-      <p>Author: {post.author}</p>
+      {post.author && <p>Author: {post.author}</p>}
     </PostContainer>
   );
 };
@@ -30,7 +30,7 @@ type Post = {
   userId: number;
   title: string;
   body: string;
-  author: string;
+  author?: string;
 };
 
 type User = {
