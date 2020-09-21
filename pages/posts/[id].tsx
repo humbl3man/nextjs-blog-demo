@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from '@emotion/styled';
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
@@ -14,13 +15,22 @@ const PostTitle = styled.h1`
   margin: 0 0 2rem;
 `;
 
+const GoBackLink = styled.a`
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--accent-color2);
+  text-transform: uppercase;
+`;
+
 const BlogPost = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PostContainer>
       <PostTitle>{post.title}</PostTitle>
       <p>{post.body}</p>
-
       {post.author && <p>Author: {post.author}</p>}
+      <Link href="/" passHref>
+        <GoBackLink>&lt; Go Back</GoBackLink>
+      </Link>
     </PostContainer>
   );
 };
